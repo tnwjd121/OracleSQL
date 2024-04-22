@@ -1,60 +1,126 @@
--- ¸¶´ç¼­Á¡ÀÇ °í°´ÀÌ ¿ä±¸ÇÏ´Â ´ÙÀ½ Áú¹®¿¡ ´ëÇØ sql¹®À» ÀÛ¼ºÇÏ½Ã¿À
---(1) µµ¼­¹øÈ£°¡ 1ÀÎ µµ¼­ÀÇ ÀÌ¸§
+-- ë§ˆë‹¹ì„œì ì˜ ê³ ê°ì´ ìš”êµ¬í•˜ëŠ” ë‹¤ìŒ ì§ˆë¬¸ì— ëŒ€í•´ sqlë¬¸ì„ ìž‘ì„±í•˜ì‹œì˜¤
+--(1) ë„ì„œë²ˆí˜¸ê°€ 1ì¸ ë„ì„œì˜ ì´ë¦„
 select bookname
 from book
 where bookid in(1);
---(2) °¡°ÝÀÌ 20,000¿ø ÀÌ»óÀÎ µµ¼­ÀÇ ÀÌ¸§
+--(2) ê°€ê²©ì´ 20,000ì› ì´ìƒì¸ ë„ì„œì˜ ì´ë¦„
 select bookname
 from book
 where price >=20000;
---(3) ¹ÚÁö¼ºÀÇ ÃÑ±¸¸Å¾×
-select sum(saleprice) "ÃÑ±¸¸Å¾×"
-from orders
-where custid in (1);
---(4) ¹ÚÁö¼ºÀÌ ±¸¸ÅÇÑ µµ¼­ÀÇ ÃâÆÇ»ç ¼ö
+--(3) ë°•ì§€ì„±ì˜ ì´êµ¬ë§¤ì•¡ 
+select sum(saleprice) "ì´êµ¬ë§¤ì•¡"
+from orders ord
+    left outer join customer cus on ord.custid = cus.custid
+where cus.name = 'ë°•ì§€ì„±';
+--(4) ë°•ì§€ì„±ì´ êµ¬ë§¤í•œ ë„ì„œì˜ ì¶œíŒì‚¬ ìˆ˜
 select count(distinct book.publisher)
 from book book
     left outer join orders ord on book.bookid = ord.bookid
-where ord.custid = 1;
---(5) ¹ÚÁö¼ºÀÌ ±¸¸ÅÇÑ µµ¼­ÀÇ ÀÌ¸§, °¡°Ý, Á¤°¡¿Í ÆÇ¸Å°¡°ÝÀÇ Â÷ÀÌ
-select book.bookname, book.price, book.price - ord.saleprice as " Á¤°¡¿Í ÆÇ¸Å°¡°Ý Â÷ÀÌ"
+    left outer join customer cus on ord.custid = cus.custid
+where cus.name = 'ë°•ì§€ì„±';
+--(5) ë°•ì§€ì„±ì´ êµ¬ë§¤í•œ ë„ì„œì˜ ì´ë¦„, ê°€ê²©, ì •ê°€ì™€ íŒë§¤ê°€ê²©ì˜ ì°¨ì´
+select book.bookname, book.price, book.price - ord.saleprice as " ì •ê°€ì™€ íŒë§¤ê°€ê²© ì°¨ì´"
 from book book
     left outer join orders ord on book.bookid = ord.bookid
-where ord.custid = 1;
---(6) ¹ÚÁö¼ºÀÌ ±¸¸ÅÇÏÁö ¾ÊÀº µµ¼­ÀÇ ÀÌ¸§
+    left outer join customer cus on ord.custid = cus.custid
+where cus.name = 'ë°•ì§€ì„±';
+--(6) ë°•ì§€ì„±ì´ êµ¬ë§¤í•˜ì§€ ì•Šì€ ë„ì„œì˜ ì´ë¦„
 select book.bookname
 from book book
     left outer join orders ord on book.bookid = ord.bookid
-where ord.custid not in(1);
+    left outer join customer cus on ord.custid = cus.custid
+where cus.name not in ('ë°•ì§€ì„±');
 
 
--- ¸¶´ç ¼­Á¡ÀÇ ¿î¿µÀÚ¿Í °æ¿µÀÚ°¡ ¿ä±¸ÇÏ´Â ´ÙÀ½ Áú¹®¿¡ ´ëÇØ sql¹®À» ÀÛ¼ºÇÏ½Ã¿À
+-- ë§ˆë‹¹ ì„œì ì˜ ìš´ì˜ìžì™€ ê²½ì˜ìžê°€ ìš”êµ¬í•˜ëŠ” ë‹¤ìŒ ì§ˆë¬¸ì— ëŒ€í•´ sqlë¬¸ì„ ìž‘ì„±í•˜ì‹œì˜¤
 select * from book;
 select * from orders;
 select * from customer;
 select * from imported_book;
---(1) ¸¶´ç¼­Á¡ µµ¼­ÀÇ ÃÑ¼ö
-select count(bookname) "µµ¼­ °³¼ö"
+--(1) ë§ˆë‹¹ì„œì  ë„ì„œì˜ ì´ìˆ˜
+select count(bookname) "ë„ì„œ ê°œìˆ˜"
 from book;
---(2) ¸¶´ç¼­Á¡¿¡ µµ¼­¸¦ Ãâ°íÇÏ´Â ÃâÆÇ»çÀÇ ÃÑ¼ö
+--(2) ë§ˆë‹¹ì„œì ì— ë„ì„œë¥¼ ì¶œê³ í•˜ëŠ” ì¶œíŒì‚¬ì˜ ì´ìˆ˜
 select count(DISTINCT publisher)
 from book;
---(3) ¸ðµç °í°´ÀÇ ÀÌ¸§, ÁÖ¼Ò
+--(3) ëª¨ë“  ê³ ê°ì˜ ì´ë¦„, ì£¼ì†Œ
 select name, address
 from customer;
---(4) 2020³â 7¿ù 4ÀÏ ~ 7¿ù 7ÀÏ »çÀÌ¿¡ ÁÖ¹®¹ÞÀº µµ¼­ÀÇ ÁÖ¹®¹øÈ£
+--(4) 2020ë…„ 7ì›” 4ì¼ ~ 7ì›” 7ì¼ ì‚¬ì´ì— ì£¼ë¬¸ë°›ì€ ë„ì„œì˜ ì£¼ë¬¸ë²ˆí˜¸
 select orderid
 from orders
 where orderdate between '2020-07-04' and '2020-07-07';
---(5) 2020³â 7¿ù 4ÀÏ ~ 7¿ù 7ÀÏ »çÀÌ¿¡ ÁÖ¹®¹ÞÀº µµ¼­¸¦ Á¦¿ÜÇÑ µµ¼­ÀÇ ÁÖ¹®¹øÈ£
+--(5) 2020ë…„ 7ì›” 4ì¼ ~ 7ì›” 7ì¼ ì‚¬ì´ì— ì£¼ë¬¸ë°›ì€ ë„ì„œë¥¼ ì œì™¸í•œ ë„ì„œì˜ ì£¼ë¬¸ë²ˆí˜¸
 select orderid
 from orders
 where orderdate not between '2020-07-04' and '2020-07-07';
---(6) ¼ºÀÌ '±è'¾¾ÀÎ °í°´ÀÇ ÀÌ¸§ ÁÖ¼Ò
+--(6) ì„±ì´ 'ê¹€'ì”¨ì¸ ê³ ê°ì˜ ì´ë¦„ ì£¼ì†Œ
 select name, address
 from customer
-where name like '±è%';
---(7) ¼ºÀÌ '±è'¾¾ÀÌ°í ÀÌ¸§ÀÌ '¾Æ'·Î ³¡³ª´Â °í°´ÀÇ ÀÌ¸§°ú ÁÖ¼Ò
+where name like 'ê¹€%';
+--(7) ì„±ì´ 'ê¹€'ì”¨ì´ê³  ì´ë¦„ì´ 'ì•„'ë¡œ ëë‚˜ëŠ” ê³ ê°ì˜ ì´ë¦„ê³¼ ì£¼ì†Œ
 select name, address
 from customer
-where name like '±è_¾Æ';
+where name like 'ê¹€_ì•„';
+
+select * from book;
+select * from orders;
+select * from customer;
+select * from imported_book;
+--(10) ê³ ê°ì˜ ì´ë¦„ê³¼ ê³ ê°ë³„ êµ¬ë§¤ì•¡
+select cus.name, sum(ord.saleprice)
+from customer cus
+    left outer join orders ord on cus.custid = ord.custid
+group by cus.name
+having sum(ord.saleprice)>=0
+order by cus.name;
+--(11) ê³ ê°ì˜ ì´ë¦„ê³¼ ê³ ê°ì´ êµ¬ë§¤í•œ ë„ì„œëª©ë¡
+select cus.name, book.bookname
+from book book
+    left outer join orders ord on book.bookid = ord.bookid
+    left outer join customer cus on ord.custid = cus.custid
+where cus.name is not null
+order by cus.name;
+--(12) ë„ì„œì˜ ê°€ê²©(Book í…Œì´ë¸”)ê³¼ íŒë§¤ê°€ê²©(Orders í…Œì´ë¸”)ì˜ ì°¨ì´ê°€ ê°€ìž¥ ë§Žì€ ì£¼ë¬¸
+select max(book.price - ord.saleprice)
+from book book
+    left outer join orders ord on book.bookid = ord.bookid;
+--(13) ë„ì„œì˜ íŒë§¤ì•¡ í‰ê· ë³´ë‹¤ ìžì‹ ì˜ êµ¬ë§¤ì•¡ í‰ê· ì´ ë” ë†’ì€ ê³ ê°ì˜ ì´ë¦„
+select cus.name
+from orders ord
+    left outer join customer cus on ord.custid = cus.custid
+group by cus.name
+having avg(ord.saleprice) > (select avg(book.price) from book);
+
+select * from book;
+select * from orders;
+select * from customer;
+select * from imported_book;
+--(1) ë°•ì§€ì„±ì´ êµ¬ë§¤í•œ ë„ì„œì˜ ì¶œíŒì‚¬ì™€ ê°™ì€ ì¶œíŒì‚¬ì—ì„œ ë„ì„œë¥¼ êµ¬ë§¤í•œ ê³ ê°ì˜ ì´ë¦„
+select cus.name
+from customer cus
+    left outer join orders ord on cus.custid = ord.custid
+    left outer join book book on book.bookid = ord.bookid
+where book.publisher in(select book.publisher
+        from book
+        where book.bookid in (select ord.bookid
+        from orders ord 
+            left outer join customer cus on ord.custid = cus.custid
+        where cus.name = 'ë°•ì§€ì„±')) and cus.name not in ('ë°•ì§€ì„±');
+--(2) ë‘ ê°œ ì´ìƒì˜ ì„œë¡œ ë‹¤ë¥¸ ì¶œíŒì‚¬ì—ì„œ ë„ì„œë¥¼ êµ¬ë§¤í•œ ê³ ê°ì˜ ì´ë¦„
+-- ì¶œíŒì‚¬ ê°¯ìˆ˜ ì¹´ìš´íŠ¸ ì‚¬ëžŒë³„ë¡œ 2ê°œ ì´ìƒ ë½‘ê³  ì‚¬ëžŒ ë½‘ê¸°
+select cus.name
+from customer cus
+    left outer join orders ord on cus.custid = ord.custid
+    left outer join book book on book.bookid = ord.bookid
+group by cus.name
+having count(distinct book.publisher) >=2;
+--(3) ì „ì²´ ê³ ê°ì˜ 30% ì´ìƒì´ êµ¬ë§¤í•œ ë„ì„œ
+-- ë„ì„œë³„ ì¹´ìš´íŠ¸
+select bookname
+from book
+where bookid in (
+    select bookid
+    from orders
+    group by bookid
+    having count(bookid)>=(select count(*) from customer)*0.3);
