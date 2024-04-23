@@ -1,12 +1,12 @@
--- ±ØÀå µ¥ÀÌÅÍº£ÀÌ½º
--- ±ØÀå
+-- ê·¹ì¥ ë°ì´í„°ë² ì´ìŠ¤
+-- ê·¹ì¥
 create table cinema(
     cinemaid number primary key,
     cinemaname varchar2(20),
     place varchar2(20)
 );
 
--- »ó¿µ°ü
+-- ìƒì˜ê´€
 create table screeninghall(
     cinemaid number,
     hallid number check (hallid>=1) check(hallid<=10),
@@ -25,22 +25,22 @@ create table reservation(
     primary key(cinemaid, hallid, customerid) 
 );
 
--- °í°´
+-- ê³ ê°
 create table moviecustomer(
     customerid number primary key,
     name varchar2(20),
     address varchar2(20)
 );
 
--- µ¥ÀÌÅÍ »ğÀÔ(¿À¶óÅ¬¿¡¼­´Â µ¥ÀÌÅÍ ¿©·¯°³ »ğÀÔ ºÒ°¡´É)
-insert into cinema values(1,'·Ôµ¥', 'Àá½Ç');
-insert into cinema values(2,'¸Ş°¡', '°­³²');
-insert into cinema values(3,'´ëÇÑ', 'Àá½Ç');
+-- ë°ì´í„° ì‚½ì…(ì˜¤ë¼í´ì—ì„œëŠ” ë°ì´í„° ì—¬ëŸ¬ê°œ ì‚½ì… ë¶ˆê°€ëŠ¥)
+insert into cinema values(1,'ë¡¯ë°', 'ì ì‹¤');
+insert into cinema values(2,'ë©”ê°€', 'ê°•ë‚¨');
+insert into cinema values(3,'ëŒ€í•œ', 'ì ì‹¤');
 select * from cinema;
 
-insert into screeninghall values(1, 1,'¾î·Á¿î ¿µÈ­', 15000, 48);
-insert into screeninghall values(3, 1,'¸ÚÁø ¿µÈ­', 7500, 120);
-insert into screeninghall values(3, 2,'Àç¹Õ´Â ¿µÈ­', 8000, 110);
+insert into screeninghall values(1, 1,'ì–´ë ¤ìš´ ì˜í™”', 15000, 48);
+insert into screeninghall values(3, 1,'ë©‹ì§„ ì˜í™”', 7500, 120);
+insert into screeninghall values(3, 2,'ì¬ë°ŒëŠ” ì˜í™”', 8000, 110);
 select * from screeninghall;
 
 insert into reservation values(3, 2, 3, 15, '2020-09-01');
@@ -48,68 +48,67 @@ insert into reservation values(3, 1, 4, 16, '2020-09-01');
 insert into reservation values(1, 1, 9, 48, '2020-09-01');
 select * from reservation;
 
-insert into moviecustomer values(3, 'È«±æµ¿', '°­³²');
-insert into moviecustomer values(4, '±èÃ¶¼ö', 'Àá½Ç');
-insert into moviecustomer values(9, '¹Ú¿µÈñ', '°­³²');
+insert into moviecustomer values(3, 'í™ê¸¸ë™', 'ê°•ë‚¨');
+insert into moviecustomer values(4, 'ê¹€ì² ìˆ˜', 'ì ì‹¤');
+insert into moviecustomer values(9, 'ë°•ì˜í¬', 'ê°•ë‚¨');
 select * from moviecustomer;
 
--- ´Ü¼øÁúÀÇ
--- 1. ¸ğµç ±ØÀåÀÇ ÀÌ¸§°ú À§Ä¡¸¦ º¸ÀÌ½Ã¿À
+-- ë‹¨ìˆœì§ˆì˜
+-- 1. ëª¨ë“  ê·¹ì¥ì˜ ì´ë¦„ê³¼ ìœ„ì¹˜ë¥¼ ë³´ì´ì‹œì˜¤
 select * from cinema;
--- 2. Àá½Ç¿¡ ÀÖ´Â ±ØÀåÀ» º¸ÀÌ½Ã¿À
-select * from cinema where place = 'Àá½Ç';
--- 3. Àá½Ç¿¡ »ç´Â °í°´ÀÇ ÀÌ¸§À» ¿À¸§Â÷¼øÀ¸·Î º¸ÀÌ½Ã¿À
-select * from moviecustomer where address = 'Àá½Ç' order by name;
--- 4. °¡°İÀÌ 8000¿ø ÀÌÇÏÀÎ ¿µÈ­ÀÇ ±ØÀå¹øÈ£, »ó¿µ°ü¹øÈ£, ¿µÈ­Á¦¸ñ
+-- 2. ì ì‹¤ì— ìˆëŠ” ê·¹ì¥ì„ ë³´ì´ì‹œì˜¤
+select * from cinema where place = 'ì ì‹¤';
+-- 3. ì ì‹¤ì— ì‚¬ëŠ” ê³ ê°ì˜ ì´ë¦„ì„ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ë³´ì´ì‹œì˜¤
+select * from moviecustomer where address = 'ì ì‹¤' order by name;
+-- 4. ê°€ê²©ì´ 8000ì› ì´í•˜ì¸ ì˜í™”ì˜ ê·¹ì¥ë²ˆí˜¸, ìƒì˜ê´€ë²ˆí˜¸, ì˜í™”ì œëª©
 select cinemaid, hallid, moviename from screeninghall where price<=8000;
--- 5. ±ØÀå À§Ä¡¿Í °í°´ÀÇ ÁÖ¼Ò°¡ °°Àº °í°´À» º¸ÀÌ½Ã¿À
+-- 5. ê·¹ì¥ ìœ„ì¹˜ì™€ ê³ ê°ì˜ ì£¼ì†Œê°€ ê°™ì€ ê³ ê°ì„ ë³´ì´ì‹œì˜¤
 select c.cinemaname,c.place, mc.name
 from cinema c, moviecustomer mc
 where c.place = mc.address;
 
--- Áı°èÁúÀÇ
--- 1. ±ØÀåÀÇ ¼ö´Â ¸î°³ÀÎ°¡?
+-- ì§‘ê³„ì§ˆì˜
+-- 1. ê·¹ì¥ì˜ ìˆ˜ëŠ” ëª‡ê°œì¸ê°€?
 select count(cinemaname) from cinema;
--- 2. »ó¿µµÇ´Â ¿µÈ­ÀÇ Æò±Õ °¡°İÀº ¾ó¸¶ÀÎ°¡?
+-- 2. ìƒì˜ë˜ëŠ” ì˜í™”ì˜ í‰ê·  ê°€ê²©ì€ ì–¼ë§ˆì¸ê°€?
 select avg(price) from screeninghall;
--- 3. 2020³â 9¿ù 1ÀÏ¿¡ ¿µÈ­¸¦ °ü¶÷ÇÑ °í°´ÀÇ ¼ö´Â ¾ó¸¶ÀÎ°¡?
+-- 3. 2020ë…„ 9ì›” 1ì¼ì— ì˜í™”ë¥¼ ê´€ëŒí•œ ê³ ê°ì˜ ìˆ˜ëŠ” ì–¼ë§ˆì¸ê°€?
 select count(cinemaid) from reservation where movieday = '2020-09-01';
 
--- ºÎ¼ÓÁúÀÇ¿Í Á¶ÀÎ
--- 1. ´ëÇÑ ±ØÀå¿¡¼­ »ó¿µµÈ ¿µÈ­Á¦¸ñÀ» º¸ÀÌ½Ã¿À
+-- ë¶€ì†ì§ˆì˜ì™€ ì¡°ì¸
+-- 1. ëŒ€í•œ ê·¹ì¥ì—ì„œ ìƒì˜ëœ ì˜í™”ì œëª©ì„ ë³´ì´ì‹œì˜¤
 select s.moviename
 from screeninghall s
     left outer join cinema c on s.cinemaid = c.cinemaid
-where c.cinemaname = '´ëÇÑ';
--- 2. ´ëÇÑ ±ØÀå¿¡¼­ ¿µÈ­¸¦ º» °í°´ÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À
+where c.cinemaname = 'ëŒ€í•œ';
+-- 2. ëŒ€í•œ ê·¹ì¥ì—ì„œ ì˜í™”ë¥¼ ë³¸ ê³ ê°ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤
 select mc.name
 from cinema c
     left outer join reservation r on c.cinemaid = r.cinemaid
     left outer join moviecustomer mc on r.customerid = mc.customerid
-where c.cinemaname = '´ëÇÑ';
--- 3. ´ëÇÑ±ØÀåÀÇ ÀüÃ¼ ¼öÀÔÀ» º¸ÀÌ½Ã¿À
+where c.cinemaname = 'ëŒ€í•œ';
+-- 3. ëŒ€í•œê·¹ì¥ì˜ ì „ì²´ ìˆ˜ì…ì„ ë³´ì´ì‹œì˜¤
 select sum(s.price)
 from screeninghall s
     left outer join cinema c on s.cinemaid = c.cinemaid
-where c.cinemaname = '´ëÇÑ';
--- ±×·ìÁúÀÇ
--- 1. ±ØÀåº° »ó¿µ°ü ¼ö¸¦ º¸ÀÌ½Ã¿À
+where c.cinemaname = 'ëŒ€í•œ';
+-- ê·¸ë£¹ì§ˆì˜
+-- 1. ê·¹ì¥ë³„ ìƒì˜ê´€ ìˆ˜ë¥¼ ë³´ì´ì‹œì˜¤
 select c.cinemaname, count(s.cinemaid)
 from screeninghall s
     left outer join cinema c on s.cinemaid = c.cinemaid
 group by c.cinemaname;
--- 2. Àá½Ç¿¡ ÀÖ´Â ±ØÀåÀÇ »ó¿µ°üÀ» º¸ÀÌ½Ã¿À
+-- 2. ì ì‹¤ì— ìˆëŠ” ê·¹ì¥ì˜ ìƒì˜ê´€ì„ ë³´ì´ì‹œì˜¤
 select c.place, count(s.cinemaid)
 from screeninghall s
     left outer join cinema c on s.cinemaid = c.cinemaid
 group by c.place;
---3. 2020³â 9¿ù 1ÀÏÀÇ ±ØÀåº° Æò±Õ °ü¶÷ °í°´ ¼ö¸¦ º¸ÀÌ½Ã¿À
-select c.cinemaname, count(r.cinemaid)
-from reservation r
-    left outer join cinema c on r.cinemaid = c.cinemaid
-where r.movieday = '2020-09-01'
-group by c.cinemaname;
--- 4. 2020³â 9¿ù 1ÀÏ¿¡ °¡Àå ¸¹Àº °í°´ÀÌ °ü¶÷ÇÑ ¿µÈ­¸¦ º¸ÀÌ½Ã¿À
+--3. 2020ë…„ 9ì›” 1ì¼ì˜ ê·¹ì¥ë³„ í‰ê·  ê´€ëŒ ê³ ê° ìˆ˜ë¥¼ ë³´ì´ì‹œì˜¤
+select avg(count(customerid))
+from reservation
+where movieday = '2020-09-01'
+group by customerid;
+-- 4. 2020ë…„ 9ì›” 1ì¼ì— ê°€ì¥ ë§ì€ ê³ ê°ì´ ê´€ëŒí•œ ì˜í™”ë¥¼ ë³´ì´ì‹œì˜¤
 select s.moviename , count(s.moviename)
 from reservation r
     left outer join screeninghall s on r.cinemaid = s.cinemaid
@@ -117,11 +116,11 @@ from reservation r
 where r.movieday = '2020-09-01'
 group by s.moviename;
 -- DML
--- ¿µÈ­ÀÇ °¡°İÀ» 10%¾¿ ÀÎ»óÇÏ½Ã¿À
+-- ì˜í™”ì˜ ê°€ê²©ì„ 10%ì”© ì¸ìƒí•˜ì‹œì˜¤
 update screeninghall
 set price = price *1.1;
 
--- ÆÇ¸Å¿ø µ¥ÀÌÅÍº£ÀÌ½º
+-- íŒë§¤ì› ë°ì´í„°ë² ì´ìŠ¤
 create table salesperson(
     name varchar2(20) primary key,
     age number,
@@ -130,7 +129,7 @@ create table salesperson(
 create table salecustomer(
     name varchar2(20) primary key,
     city varchar2(20),
-    industrytype varchar2(20) -- Á÷¾÷
+    industrytype varchar2(20) -- ì§ì—…
 );
 create table ordersale(
     id number,
@@ -141,7 +140,7 @@ create table ordersale(
     foreign key(salesperson) references salesperson(name) on delete cascade
 );
 
--- µ¥ÀÌÅÍ »ğÀÔ
+-- ë°ì´í„° ì‚½ì…
 insert into salesperson values('Tom', '26', 10000);
 insert into salesperson values('Roy', '32', 15000);
 insert into salesperson values('Sally', '24', 9000);
@@ -149,13 +148,13 @@ insert into salesperson values('Nancy', '29', 7000);
 insert into salesperson values('Clara', '40', 8500);
 select * from salesperson;
 
-insert into salecustomer values('Mary', 'LA', '°³¹ßÀÚ');
-insert into salecustomer values('Carrie', 'LA', '¿ä¸®»ç');
-insert into salecustomer values('IU', 'KR', '°¡¼ö');
-insert into salecustomer values('Diane', 'LA', '°³¹ßÀÚ');
-insert into salecustomer values('Grace', 'DE', '¿ä¸®»ç');
-insert into salecustomer values('Nancy', 'MX', '±³À°ÀÚ');
-insert into salecustomer values('Frank', 'US', '±³À°ÀÚ');
+insert into salecustomer values('Mary', 'LA', 'ê°œë°œì');
+insert into salecustomer values('Carrie', 'LA', 'ìš”ë¦¬ì‚¬');
+insert into salecustomer values('IU', 'KR', 'ê°€ìˆ˜');
+insert into salecustomer values('Diane', 'LA', 'ê°œë°œì');
+insert into salecustomer values('Grace', 'DE', 'ìš”ë¦¬ì‚¬');
+insert into salecustomer values('Nancy', 'MX', 'êµìœ¡ì');
+insert into salecustomer values('Frank', 'US', 'êµìœ¡ì');
 select * from salecustomer;
 
 insert into ordersale values(1, 'Mary','Tom', 1000);
@@ -167,25 +166,25 @@ insert into ordersale values(6, 'Diane','Sally', 6000);
 insert into ordersale values(7, 'Grace','Roy', 7000);
 insert into ordersale values(8, 'Nancy','Nancy', 8000);
 select * from ordersale;
--- ¸ğµç ÆÇ¸Å¿øÀÇ ÀÌ¸§°ú ±Ş¿©¸¦ º¸ÀÌ½Ã¿À Áßº¹ÇàÀº Á¦°Å
+-- ëª¨ë“  íŒë§¤ì›ì˜ ì´ë¦„ê³¼ ê¸‰ì—¬ë¥¼ ë³´ì´ì‹œì˜¤ ì¤‘ë³µí–‰ì€ ì œê±°
 select name, salary
 from salesperson;
--- ³ªÀÌ°¡ 30¼¼ ¹Ì¸¸ÀÎ ÆÇ¸Å¿øÀÌ¸§
+-- ë‚˜ì´ê°€ 30ì„¸ ë¯¸ë§Œì¸ íŒë§¤ì›ì´ë¦„
 select name
 from salesperson
 where age<30;
--- s·Î ³¡³ª´Â µµ½Ã¿¡ »ç´Â °í°´ÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À
+-- së¡œ ëë‚˜ëŠ” ë„ì‹œì— ì‚¬ëŠ” ê³ ê°ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤
 select name, city
 from salecustomer
 where city like ('%S');
--- ÁÖ¹®À» ÇÑ °í°´ÀÇ ¼ö(¼­·Î ´Ù¸¥ °í°´¸¸) ±¸ÇÏ½Ã¿À
+-- ì£¼ë¬¸ì„ í•œ ê³ ê°ì˜ ìˆ˜(ì„œë¡œ ë‹¤ë¥¸ ê³ ê°ë§Œ) êµ¬í•˜ì‹œì˜¤
 select count(distinct custname)
 from ordersale;
--- ÆÇ¸Å¿ø °¢°¢¿¡ ´ëÇÏ¿© ÁÖ¹®ÀÇ ¼ö¸¦ °è»êÇÏ½Ã¿À
+-- íŒë§¤ì› ê°ê°ì— ëŒ€í•˜ì—¬ ì£¼ë¬¸ì˜ ìˆ˜ë¥¼ ê³„ì‚°í•˜ì‹œì˜¤
 select salesperson, count(salesperson)
 from ordersale
 group by salesperson;
--- la»ç´Â °í°´À¸·ÎºÎÅÍ ÁÖ¹®À» ¹ŞÀº ÆÇ¸Å¿øÀÇ ÀÌ¸§°ú ³ªÀÌ¸¦ º¸ÀÌ½Ã¿À(ºÎ¼ÓÁúÀÇ)
+-- laì‚¬ëŠ” ê³ ê°ìœ¼ë¡œë¶€í„° ì£¼ë¬¸ì„ ë°›ì€ íŒë§¤ì›ì˜ ì´ë¦„ê³¼ ë‚˜ì´ë¥¼ ë³´ì´ì‹œì˜¤(ë¶€ì†ì§ˆì˜)
 select name, age
 from salesperson
 where name in (
@@ -195,27 +194,27 @@ where name in (
         select name
         from salecustomer
         where city = 'LA'));
--- la»ç´Â °í°´À¸·ÎºÎÅÍ ÁÖ¹®À» ¹ŞÀº ÆÇ¸Å¿øÀÇ ÀÌ¸§°ú ³ªÀÌ¸¦ º¸ÀÌ½Ã¿À(Á¶ÀÎÀ» »ç¿ë)
+-- laì‚¬ëŠ” ê³ ê°ìœ¼ë¡œë¶€í„° ì£¼ë¬¸ì„ ë°›ì€ íŒë§¤ì›ì˜ ì´ë¦„ê³¼ ë‚˜ì´ë¥¼ ë³´ì´ì‹œì˜¤(ì¡°ì¸ì„ ì‚¬ìš©)
 select sp.name, sp.age
 from ordersale os
     left outer join salecustomer sc on sc.name = os.custname
     left outer join salesperson sp on sp.name = os.salesperson
 where sc.city = 'LA';
--- µÎ ¹ø ÀÌ»ó ÁÖ¹®À» ¹ŞÀº ÆÇ¸Å¿øÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À
+-- ë‘ ë²ˆ ì´ìƒ ì£¼ë¬¸ì„ ë°›ì€ íŒë§¤ì›ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤
 select sp.name, count(os.custname)
 from ordersale os
     left outer join salecustomer sc on sc.name = os.custname
     left outer join salesperson sp on sp.name = os.salesperson
 group by sp.name
 having count(os.custname)>=2;
--- ÆÇ¸Å¿ø tomÀÇ ºÀ±ŞÀ» 45000¿øÀ¸·Î º¯°æÇÏ´Â sql¹® ÀÛ¼ºÇÏ½Ã¿À
+-- íŒë§¤ì› tomì˜ ë´‰ê¸‰ì„ 45000ì›ìœ¼ë¡œ ë³€ê²½í•˜ëŠ” sqlë¬¸ ì‘ì„±í•˜ì‹œì˜¤
 update salesperson
 set salary = 45000
 where name = 'Tom';
 select * from salesperson;
 
--- ±â¾÷ ÇÁ·ÎÁ§Æ® µ¥ÀÌÅÍº£ÀÌ½º
--- »ç¿ø
+-- ê¸°ì—… í”„ë¡œì íŠ¸ ë°ì´í„°ë² ì´ìŠ¤
+-- ì‚¬ì›
 create table employee(
     empno number primary key,
     name varchar(20),
@@ -227,7 +226,7 @@ create table employee(
 );
 
 create table department(
--- ÆÀÀå
+-- íŒ€ì¥
     deptno number primary key,
     deptname varchar(20),
     manager varchar(20)
@@ -246,11 +245,11 @@ create table works(
     FOREIGN key (empno) REFERENCES employee(empno) on delete cascade,
     foreign key (projno) references project(projno) on delete cascade
 );
--- µ¥ÀÌÅÍ »ğÀÔ
-insert into Department values(1, '°³¹ß1ÆÀ', 'È«±æµ¿');
-insert into Department values(2, '°³¹ß2ÆÀ', 'ÇÏÀ±');
-insert into Department values(3, '¼­ºñ½º1ÆÀ', 'Áø¿ì');
-insert into Department values(4, '¼­ºñ½º2ÆÀ', 'ÇÏÀ±');
+-- ë°ì´í„° ì‚½ì…
+insert into Department values(1, 'ê°œë°œ1íŒ€', 'í™ê¸¸ë™');
+insert into Department values(2, 'ê°œë°œ2íŒ€', 'í•˜ìœ¤');
+insert into Department values(3, 'ì„œë¹„ìŠ¤1íŒ€', 'ì§„ìš°');
+insert into Department values(4, 'ì„œë¹„ìŠ¤2íŒ€', 'í•˜ìœ¤');
 select * from Department;
 
 insert into Project values(1, 'Admin Page Project', 1);
@@ -259,16 +258,16 @@ insert into Project values(3, 'Ad TV', 3);
 insert into Project values(4, 'Ad Web', 4);
 select * from Project;
 
-insert into Employee values(1, '¹ÎÁØ', '010-1234-1230', '¼­¿ï', '³²ÀÚ', 'IT', 1);
-insert into Employee values(2, '¼­ÁØ', '010-1234-1231', 'ºÎ»ê', '³²ÀÚ', 'IT', 2);
-insert into Employee values(3, '¿¹ÁØ', '010-1234-1232', '¿ï»ê', '¿©ÀÚ', 'service', 3);
-insert into Employee values(4, 'µµÀ±', '010-1234-1233', '±èÆ÷', '³²ÀÚ', 'IT', 1);
-insert into Employee values(5, '½Ã¿ì', '010-1234-1234', '¼­¿ï', '¿©ÀÚ', 'service', 4);
-insert into Employee values(6, 'ÁÖ¿ø', '010-1234-1235', 'ºÎ»ê', '¿©ÀÚ', 'IT', 2);
-insert into Employee values(7, 'ÇÏÁØ', '010-1234-1236', '±èÆ÷', '³²ÀÚ', 'service', 4);
-insert into Employee values(8, 'ÁöÈ£', '010-1234-1237', '¿ï»ê', '¿©ÀÚ', 'service', 3);
-insert into Employee values(9, 'ÁöÈÄ', '010-1234-1238', '¼­¿ï', '³²ÀÚ', 'IT', 1);
-insert into Employee values(10, 'ÁØ¼­', '010-1234-1239', '¼­¿ï', '¿©ÀÚ', 'IT', 2);
+insert into Employee values(1, 'ë¯¼ì¤€', '010-1234-1230', 'ì„œìš¸', 'ë‚¨ì', 'IT', 1);
+insert into Employee values(2, 'ì„œì¤€', '010-1234-1231', 'ë¶€ì‚°', 'ë‚¨ì', 'IT', 2);
+insert into Employee values(3, 'ì˜ˆì¤€', '010-1234-1232', 'ìš¸ì‚°', 'ì—¬ì', 'service', 3);
+insert into Employee values(4, 'ë„ìœ¤', '010-1234-1233', 'ê¹€í¬', 'ë‚¨ì', 'IT', 1);
+insert into Employee values(5, 'ì‹œìš°', '010-1234-1234', 'ì„œìš¸', 'ì—¬ì', 'service', 4);
+insert into Employee values(6, 'ì£¼ì›', '010-1234-1235', 'ë¶€ì‚°', 'ì—¬ì', 'IT', 2);
+insert into Employee values(7, 'í•˜ì¤€', '010-1234-1236', 'ê¹€í¬', 'ë‚¨ì', 'service', 4);
+insert into Employee values(8, 'ì§€í˜¸', '010-1234-1237', 'ìš¸ì‚°', 'ì—¬ì', 'service', 3);
+insert into Employee values(9, 'ì§€í›„', '010-1234-1238', 'ì„œìš¸', 'ë‚¨ì', 'IT', 1);
+insert into Employee values(10, 'ì¤€ì„œ', '010-1234-1239', 'ì„œìš¸', 'ì—¬ì', 'IT', 2);
 select * from Employee;
 
 insert into Works values(1, 1, 10);
@@ -283,32 +282,32 @@ insert into Works values(9, 1, 4);
 insert into Works values(10, 2, 12);
 select * from Works;
 
--- ¸ğµç »ç¿øÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À
+-- ëª¨ë“  ì‚¬ì›ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤
     select name
     from employee;
--- ¿©ÀÚ »ç¿øÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À
+-- ì—¬ì ì‚¬ì›ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤
     select name
     from employee
-    where sex ='¿©ÀÚ';
--- ÆÀÀå(manager)ÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À
+    where sex ='ì—¬ì';
+-- íŒ€ì¥(manager)ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤
     select manager
     from department;
--- itºÎ¼­¿¡¼­ ÀÏÇÏ´Â »ç¿øÀÇ ÀÌ¸§°ú ÁÖ¼Ò¸¦ º¸ÀÌ½Ã¿À
+-- itë¶€ì„œì—ì„œ ì¼í•˜ëŠ” ì‚¬ì›ì˜ ì´ë¦„ê³¼ ì£¼ì†Œë¥¼ ë³´ì´ì‹œì˜¤
     select name, address
     from Employee
     where position = 'IT';
--- È«±æµ¿ ÆÀÀåºÎ¼­¿¡¼­ ÀÏÇÏ´Â »ç¿øÀÇ ¼ö¸¦ º¸ÀÌ½Ã¿À
+-- í™ê¸¸ë™ íŒ€ì¥ë¶€ì„œì—ì„œ ì¼í•˜ëŠ” ì‚¬ì›ì˜ ìˆ˜ë¥¼ ë³´ì´ì‹œì˜¤
     select de.manager, count(em.name)
     from Department de
     left outer join Employee em on de.deptno=em.depton
-    where de.manager = 'È«±æµ¿'
+    where de.manager = 'í™ê¸¸ë™'
     group by de.manager;
--- »ç¿øµéÀÌ ÀÏÇÑ ½Ã°£ ¼ö¸¦ ºÎ¼­º°, »ç¿ø ÀÌ¸§º° ¿À¸§Â÷¼øÀ¸·Î º¸ÀÌ½Ã¿À
+-- ì‚¬ì›ë“¤ì´ ì¼í•œ ì‹œê°„ ìˆ˜ë¥¼ ë¶€ì„œë³„, ì‚¬ì› ì´ë¦„ë³„ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ë³´ì´ì‹œì˜¤
     select em.position, em.name, wo.hoursworked
     from Employee em
     left outer join Works wo on em.empno = wo.empno
     order by em.position, em.name;
--- 2¸í ÀÌ»óÀÇ »ç¿øÀÌ Âü¿©ÇÑ ÇÁ·ÎÁ§Æ®ÀÇ ¹øÈ£, ÀÌ¸§ »ç¿øÀÇ ¼ö¸¦ º¸ÀÌ½Ã¿À
+-- 2ëª… ì´ìƒì˜ ì‚¬ì›ì´ ì°¸ì—¬í•œ í”„ë¡œì íŠ¸ì˜ ë²ˆí˜¸, ì´ë¦„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ë³´ì´ì‹œì˜¤
     select p.projno, p.projname, count(em.name)
     from Employee em
     left outer join Works wo on em.empno = wo.empno
@@ -317,7 +316,7 @@ select * from Works;
     having count(em.name)>=2
     order by p.projno;
     
--- 3¸í ÀÌ»óÀÇ »ç¿øÀÌ ÀÖ´Â ºÎ¼­ÀÇ »ç¿ø ÀÌ¸§À» º¸ÀÌ½Ã¿À
+-- 3ëª… ì´ìƒì˜ ì‚¬ì›ì´ ìˆëŠ” ë¶€ì„œì˜ ì‚¬ì› ì´ë¦„ì„ ë³´ì´ì‹œì˜¤
     select name
     from Employee
     where position in(
