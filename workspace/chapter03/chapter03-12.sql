@@ -53,7 +53,7 @@ create table sales_order(
     custname varchar2(50),
     salesperson varchar(50),
     amount number, 
-    primary key (custname, salesperson),
+    primary key (onumber),
     foreign key(custname) references sales_customer(name),
     foreign key(salesperson) references sales_person(name)
 );
