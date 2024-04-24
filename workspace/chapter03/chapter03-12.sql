@@ -54,8 +54,8 @@ create table sales_order(
     salesperson varchar(50),
     amount number, 
     primary key (custname, salesperson),
-    foreign key(custname) references customer(name),
-    foreign key(saleperson) references saleperson(name)
+    foreign key(custname) references sales_customer(name),
+    foreign key(salesperson) references sales_person(name)
 );
 
 -- 고객 테이블 생성
