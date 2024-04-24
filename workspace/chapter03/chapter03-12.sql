@@ -1,14 +1,14 @@
--- ¿¬½À ¹®Á¦ Ç®ÀÌ
+-- ì—°ìŠµ ë¬¸ì œ í’€ì´
 
--- [±ØÀå µ¥ÀÌÅÍ º£ÀÌ½º]
--- ±ØÀå Å×ÀÌºí
+-- [ê·¹ì¥ ë°ì´í„° ë² ì´ìŠ¤]
+-- ê·¹ì¥ í…Œì´ë¸”
 create table theater(
     ttid number primary key,
     ttname varchar2(30),
     ttlocation varchar2(30)
 );
--- »ó¿µ°ü Å×ÀÌºí
--- ¿µÈ­ °¡°İÀº 20000¿øÀ» ³ÑÁö ¾Ê¾Æ¾ß ÇÑ´Ù
+-- ìƒì˜ê´€ í…Œì´ë¸”
+-- ì˜í™” ê°€ê²©ì€ 20000ì›ì„ ë„˜ì§€ ì•Šì•„ì•¼ í•œë‹¤
 create table cinema(
     ttid number,
     cid number, 
@@ -17,9 +17,9 @@ create table cinema(
     chairnumber number,
     primary key (ttid, cid)
 );
--- ¿¹¾à Å×ÀÌºí »ı¼º
--- »ó¿µ°ü ¹øÈ£´Â 1ºÎÅÍ 10»çÀÌÀÌ´Ù
--- °°Àº »ç¶÷ÀÌ °°Àº ÁÂ¼®¹øÈ£¸¦ µÎ ¹ø ¿¹¾àÇÏÁö ¾Ê¾Æ¾ß ÇÑ´Ù
+-- ì˜ˆì•½ í…Œì´ë¸” ìƒì„±
+-- ìƒì˜ê´€ ë²ˆí˜¸ëŠ” 1ë¶€í„° 10ì‚¬ì´ì´ë‹¤
+-- ê°™ì€ ì‚¬ëŒì´ ê°™ì€ ì¢Œì„ë²ˆí˜¸ë¥¼ ë‘ ë²ˆ ì˜ˆì•½í•˜ì§€ ì•Šì•„ì•¼ í•œë‹¤
 create table reservation(
     ttid number,
     cid number check(cid>=1) check(cid<=10),
@@ -29,26 +29,26 @@ create table reservation(
     primary key (ttid, cid, cusid)
 );
 
--- °í°´ Å×ÀÌºí »ı¼º
--- ¹®ÀÚ¿­ÀÇ Å©±â: ¹ÙÀÌÆ®
--- ¿¹) varchar2(20)
--- 20byte -> À¯´ÏÄÚµå(unicode)´Â ÇÑ±ÛÀÚ¿¡ 2byte
--- 10±ÛÀÚ Á¤µµ ³ÖÀ» ¼ö ÀÖ´Â Å©±â
-create table customer(
+-- ê³ ê° í…Œì´ë¸” ìƒì„±
+-- ë¬¸ìì—´ì˜ í¬ê¸°: ë°”ì´íŠ¸
+-- ì˜ˆ) varchar2(20)
+-- 20byte -> ìœ ë‹ˆì½”ë“œ(unicode)ëŠ” í•œê¸€ìì— 2byte
+-- 10ê¸€ì ì •ë„ ë„£ì„ ìˆ˜ ìˆëŠ” í¬ê¸°
+create table movie_customer(
     cusid number primary key,
     cusname varchar2(50),
     cusaddr varchar2(300)
 );
 
--- [ÆÇ¸Å¿ø µ¥ÀÌÅÍº£ÀÌ½º]
--- ÆÇ¸Å¿ø Å×ÀÌºí »ı¼º
-create table salesperson(
+-- [íŒë§¤ì› ë°ì´í„°ë² ì´ìŠ¤]
+-- íŒë§¤ì› í…Œì´ë¸” ìƒì„±
+create table sales_person(
     name varchar2(100) primary key,
     age number,
     salary number
 );
--- ÁÖ¹® Å×ÀÌºí »ı¼º
-create table order(
+-- ì£¼ë¬¸ í…Œì´ë¸” ìƒì„±
+create table sales_order(
     onumber number,
     custname varchar2(50),
     salesperson varchar(50),
@@ -58,15 +58,15 @@ create table order(
     foreign key(saleperson) references saleperson(name)
 );
 
--- °í°´ Å×ÀÌºí »ı¼º
-create table customer(
+-- ê³ ê° í…Œì´ë¸” ìƒì„±
+create table sales_customer(
     name varchar2(50) primary key,
     city varchar2(50),
     industrytype varchar2(50)
 );
 
--- [±â¾÷ ÇÁ·ÎÁ§Æ® µ¥ÀÌÅÍº£ÀÌ½º]
--- Á÷¿ø Å×ÀÌºí »ı¼º
+-- [ê¸°ì—… í”„ë¡œì íŠ¸ ë°ì´í„°ë² ì´ìŠ¤]
+-- ì§ì› í…Œì´ë¸” ìƒì„±
 create table employee(
     empno number primary key,
     name varchar2(50),
@@ -77,19 +77,19 @@ create table employee(
     deptno number
 );
 
--- ºÎ¼­ Å×ÀÌºí »ı¼º
+-- ë¶€ì„œ í…Œì´ë¸” ìƒì„±
 create table department(
     deptno number primary key,
     deptname varchar2(50),
     manager varchar2(10)
 );
--- ÇÁ·ÎÁ§Æ® Å×ÀÌºí »ı¼º
+-- í”„ë¡œì íŠ¸ í…Œì´ë¸” ìƒì„±
 create table project (
     projno number primary key,
     projname varchar2(50),
     deptno number
 );
--- ÀÛ¾÷ Å×ÀÌºí »ı¼º
+-- ì‘ì—… í…Œì´ë¸” ìƒì„±
 create table works(
     empno number, 
     projno numer,
