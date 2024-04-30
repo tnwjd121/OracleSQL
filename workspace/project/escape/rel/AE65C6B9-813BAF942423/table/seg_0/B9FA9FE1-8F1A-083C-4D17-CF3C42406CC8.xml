@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B9FA9FE1-8F1A-083C-4D17-CF3C42406CC8" schemaObject="9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA" name="ESCAPE_BRANCH">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>ESCAPE_BRANCH</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:05 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BID" id="E9A1E44F-B6F6-56FF-8395-AE079CA71D57">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>ESCAPE_BRANCH</sourceObjSchema>
+<sourceObjName>BID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:06 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BNAME" id="1AB91CB4-DEC3-511B-8C22-F90739954E55">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>ESCAPE_BRANCH</sourceObjSchema>
+<sourceObjName>BNAME</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:06 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BADDR" id="122734E3-0D93-27AB-AF42-6D99DA866BFE">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>ESCAPE_BRANCH</sourceObjSchema>
+<sourceObjName>BADDR</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:06 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FF88E36B-8844-CA43-7DB4-5ACC1E269FBD" schemaObject="9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA" name="ESCAPE_BRANCH_PK">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>SYS_C007599</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:06 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9A1E44F-B6F6-56FF-8395-AE079CA71D57"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

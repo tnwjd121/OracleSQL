@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="F3BE10C3-6CCD-65AD-1CEC-EBF374A32F9B" mainViewID="6EEA6F5A-1B58-2A2C-939D-2B225CB696FC">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:05:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

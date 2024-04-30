@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EBABF421-AD81-9D1E-8D4C-933A17811808" schemaObject="9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA" name="THEMA">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>THEMA</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TID" id="A69C8358-C885-4594-D72C-38EE3DCC05FA">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>THEMA</sourceObjSchema>
+<sourceObjName>TID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BID" id="30B751DC-1AC2-BEBC-F76D-40718292B5EF">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>THEMA</sourceObjSchema>
+<sourceObjName>BID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4918D02A-02BF-64CC-AA8F-49B9CB273F1B" referredColumn="E9A1E44F-B6F6-56FF-8395-AE079CA71D57"/>
+</associations>
+</Column>
+<Column name="TNAME" id="845A190F-99BB-B82D-8BDE-A550F22357ED">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>THEMA</sourceObjSchema>
+<sourceObjName>TNAME</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TGENRE" id="4054D050-9A4C-5ED0-8176-C3BAF5A484C0">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>THEMA</sourceObjSchema>
+<sourceObjName>TGENRE</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TLEVEL" id="ABE36D5A-DEF2-60FA-20A3-949BC229F3A3">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>THEMA</sourceObjSchema>
+<sourceObjName>TLEVEL</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRICE" id="64511315-BF13-D7C5-5987-175E2D5D739A">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>THEMA</sourceObjSchema>
+<sourceObjName>PRICE</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="80F19097-20FB-5779-F229-C4F55F9C4FDD" schemaObject="9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA" name="THEMA_PK">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>SYS_C007609</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A69C8358-C885-4594-D72C-38EE3DCC05FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D95EF619-BDF0-6889-4C05-DFBC0DDA2D40" name="SYS_C007610">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30B751DC-1AC2-BEBC-F76D-40718292B5EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

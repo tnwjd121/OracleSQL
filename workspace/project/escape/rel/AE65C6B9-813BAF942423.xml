@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="AE65C6B9-1688-6BB1-ED9C-813BAF942423" mainViewID="B341ED55-0A40-8AC1-5595-4BE1BC913977">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:05:12 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>79C73AAF-E1A7-E669-7DF0-025EE81A2AFC</selectedRDBMSSite>
+<importConnectionStamps>
+<importConnectionStamp class="oracle.dbtools.crest.imports.DBConnectionStamp">
+<connName>escape</connName>
+<connUser>C##ESCAPE</connUser>
+<connType>1</connType>
+</importConnectionStamp>
+</importConnectionStamps>
+</relationalModel>

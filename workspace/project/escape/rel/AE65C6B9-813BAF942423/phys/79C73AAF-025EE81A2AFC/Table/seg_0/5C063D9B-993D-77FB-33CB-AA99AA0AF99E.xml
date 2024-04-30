@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="VISIT" directorySegmentName="seg_0" id="5C063D9B-993D-77FB-33CB-AA99AA0AF99E">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<schemaObject>9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>BADF5AED-7389-5BD7-4424-4555C9648341</segment>
+<tableSpace>95DB1FE5-36E8-1DB8-9E6E-0A469C9B91ED</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="VISITNUM" id="010524C2-7DB2-239C-29D6-15B86F06E4B7">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EID" id="5D3ADAFE-6D71-37B9-1A75-3AA2D2FBFD47">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TID" id="CFA38D8E-5C1D-E1F2-41AD-43EE886CAA91">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CID" id="D1B37DCA-8B1D-214B-4543-C4F6652EA7F4">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VDATE" id="D864596C-8886-B619-0D9E-7C6830653E9F">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VID" id="FD56681E-2368-4BE1-4904-E68E8B73D47B">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007618" id="7E9D0625-507C-F934-3F7A-AE78CC9EE88F">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007617" id="8821E27F-6E18-867C-EB0B-F5BC5823C8A1">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007616" id="A08B61A7-CED4-30E6-257A-40387457B4BD">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="VISIT_PK" id="95D2969F-008B-95BE-C29C-9C09CDF6D513">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<schemaObject>9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA</schemaObject>
+<segment>F4F355F2-9961-3B42-CB2D-540D105972E7</segment>
+<tableSpace>95DB1FE5-36E8-1DB8-9E6E-0A469C9B91ED</tableSpace>
+<indexSegment>F4F355F2-9961-3B42-CB2D-540D105972E7</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

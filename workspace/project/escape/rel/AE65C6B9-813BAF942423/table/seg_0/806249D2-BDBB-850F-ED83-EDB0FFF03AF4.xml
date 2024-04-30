@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="806249D2-BDBB-850F-ED83-EDB0FFF03AF4" schemaObject="9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA" name="EMP">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>EMP</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BID" id="E059B6F6-872B-0228-DA14-615DCDDAC46B">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>EMP</sourceObjSchema>
+<sourceObjName>BID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ACC0D934-28BF-3A7E-FD4A-6874B26CBE56" referredColumn="E9A1E44F-B6F6-56FF-8395-AE079CA71D57"/>
+</associations>
+</Column>
+<Column name="EID" id="8D8F864F-8439-729A-741D-78D18AF5C0EC">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>EMP</sourceObjSchema>
+<sourceObjName>EID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENAME" id="0B5EB0CA-4D05-AD67-08A2-FE60E2164728">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>EMP</sourceObjSchema>
+<sourceObjName>ENAME</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESEX" id="35403BC2-D8D7-B55A-A84E-4799D4A640D5">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>EMP</sourceObjSchema>
+<sourceObjName>ESEX</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EAGE" id="8A9B0EAC-6C18-8E56-021E-246983751DBD">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>EMP</sourceObjSchema>
+<sourceObjName>EAGE</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D667774C-7F7C-B474-E786-58008F8973CC" schemaObject="9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA" name="EMP_PK">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>SYS_C007602</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D8F864F-8439-729A-741D-78D18AF5C0EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="902F1529-8940-2BCC-7FF1-7C92AA4341AB" name="SYS_C007603">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E059B6F6-872B-0228-DA14-615DCDDAC46B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

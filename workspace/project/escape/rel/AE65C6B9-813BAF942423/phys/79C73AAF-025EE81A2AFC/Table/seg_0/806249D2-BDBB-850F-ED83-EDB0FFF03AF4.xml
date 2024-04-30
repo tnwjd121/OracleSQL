@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="EMP" directorySegmentName="seg_0" id="806249D2-BDBB-850F-ED83-EDB0FFF03AF4">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<schemaObject>9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>BADF5AED-7389-5BD7-4424-4555C9648341</segment>
+<tableSpace>95DB1FE5-36E8-1DB8-9E6E-0A469C9B91ED</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ENAME" id="0B5EB0CA-4D05-AD67-08A2-FE60E2164728">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ESEX" id="35403BC2-D8D7-B55A-A84E-4799D4A640D5">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EAGE" id="8A9B0EAC-6C18-8E56-021E-246983751DBD">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EID" id="8D8F864F-8439-729A-741D-78D18AF5C0EC">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BID" id="E059B6F6-872B-0228-DA14-615DCDDAC46B">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007603" id="902F1529-8940-2BCC-7FF1-7C92AA4341AB">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="EMP_PK" id="D667774C-7F7C-B474-E786-58008F8973CC">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:00 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<schemaObject>9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA</schemaObject>
+<segment>F4F355F2-9961-3B42-CB2D-540D105972E7</segment>
+<tableSpace>95DB1FE5-36E8-1DB8-9E6E-0A469C9B91ED</tableSpace>
+<indexSegment>F4F355F2-9961-3B42-CB2D-540D105972E7</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

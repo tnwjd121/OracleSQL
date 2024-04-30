@@ -1,0 +1,153 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5C063D9B-993D-77FB-33CB-AA99AA0AF99E" schemaObject="9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA" name="VISIT">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>VISIT</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="VID" id="FD56681E-2368-4BE1-4904-E68E8B73D47B">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>VISIT</sourceObjSchema>
+<sourceObjName>VID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TID" id="CFA38D8E-5C1D-E1F2-41AD-43EE886CAA91">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>VISIT</sourceObjSchema>
+<sourceObjName>TID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2CFE5C11-6315-A5C0-0D9B-722441028DA1" referredColumn="A69C8358-C885-4594-D72C-38EE3DCC05FA"/>
+</associations>
+</Column>
+<Column name="CID" id="D1B37DCA-8B1D-214B-4543-C4F6652EA7F4">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>VISIT</sourceObjSchema>
+<sourceObjName>CID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F337A114-6281-2921-E8C4-68C7A0DA05B0" referredColumn="3E88EBE4-6D68-9311-A56E-78E486B44DA4"/>
+</associations>
+</Column>
+<Column name="VISITNUM" id="010524C2-7DB2-239C-29D6-15B86F06E4B7">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>VISIT</sourceObjSchema>
+<sourceObjName>VISITNUM</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VDATE" id="D864596C-8886-B619-0D9E-7C6830653E9F">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>VISIT</sourceObjSchema>
+<sourceObjName>VDATE</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EID" id="5D3ADAFE-6D71-37B9-1A75-3AA2D2FBFD47">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>VISIT</sourceObjSchema>
+<sourceObjName>EID</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D024795-9498-8F1D-0175-8EF6DFC7094A" referredColumn="8D8F864F-8439-729A-741D-78D18AF5C0EC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="95D2969F-008B-95BE-C29C-9C09CDF6D513" schemaObject="9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA" name="VISIT_PK">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>SYS_C007615</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD56681E-2368-4BE1-4904-E68E8B73D47B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A08B61A7-CED4-30E6-257A-40387457B4BD" name="SYS_C007616">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFA38D8E-5C1D-E1F2-41AD-43EE886CAA91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8821E27F-6E18-867C-EB0B-F5BC5823C8A1" name="SYS_C007617">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1B37DCA-8B1D-214B-4543-C4F6652EA7F4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E9D0625-507C-F934-3F7A-AE78CC9EE88F" name="SYS_C007618">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D3ADAFE-6D71-37B9-1A75-3AA2D2FBFD47"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

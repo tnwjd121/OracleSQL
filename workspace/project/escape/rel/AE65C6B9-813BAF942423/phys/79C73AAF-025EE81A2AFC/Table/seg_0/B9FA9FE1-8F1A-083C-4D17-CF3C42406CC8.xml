@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ESCAPE_BRANCH" directorySegmentName="seg_0" id="B9FA9FE1-8F1A-083C-4D17-CF3C42406CC8">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:05 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<schemaObject>9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>BADF5AED-7389-5BD7-4424-4555C9648341</segment>
+<tableSpace>95DB1FE5-36E8-1DB8-9E6E-0A469C9B91ED</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="BADDR" id="122734E3-0D93-27AB-AF42-6D99DA866BFE">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:06 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BNAME" id="1AB91CB4-DEC3-511B-8C22-F90739954E55">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:06 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BID" id="E9A1E44F-B6F6-56FF-8395-AE079CA71D57">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:06 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ESCAPE_BRANCH_PK" id="FF88E36B-8844-CA43-7DB4-5ACC1E269FBD">
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:06 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<schemaObject>9F6DFDA5-4E5F-A61A-E35D-02DE423A52EA</schemaObject>
+<segment>F4F355F2-9961-3B42-CB2D-540D105972E7</segment>
+<tableSpace>95DB1FE5-36E8-1DB8-9E6E-0A469C9B91ED</tableSpace>
+<indexSegment>F4F355F2-9961-3B42-CB2D-540D105972E7</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F337A114-6281-2921-E8C4-68C7A0DA05B0" containerWithKeyObject="5C063D9B-993D-77FB-33CB-AA99AA0AF99E" localFKIndex="8821E27F-6E18-867C-EB0B-F5BC5823C8A1" name="SYS_C007617">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>SYS_C007617</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:16 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<referredTableLongName>C##ESCAPE.CUSTOMER</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>93942878-0ECC-CE38-3B2B-85B27633C76F</referredTableID>
+<keyObject>B935C27B-FE16-EB90-B1F6-D5B779587CE3</keyObject>
+<referredKeyID>B935C27B-FE16-EB90-B1F6-D5B779587CE3</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>CID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

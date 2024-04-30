@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4918D02A-02BF-64CC-AA8F-49B9CB273F1B" containerWithKeyObject="EBABF421-AD81-9D1E-8D4C-933A17811808" localFKIndex="D95EF619-BDF0-6889-4C05-DFBC0DDA2D40" name="SYS_C007610">
+<sourceConnName>escape</sourceConnName>
+<sourceObjSchema>C##ESCAPE</sourceObjSchema>
+<sourceObjName>SYS_C007610</sourceObjName>
+<createdBy>ITPS</createdBy>
+<createdTime>2024-04-30 06:06:11 UTC</createdTime>
+<ownerDesignName>escape</ownerDesignName>
+<referredTableLongName>C##ESCAPE.ESCAPE_BRANCH</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B9FA9FE1-8F1A-083C-4D17-CF3C42406CC8</referredTableID>
+<keyObject>FF88E36B-8844-CA43-7DB4-5ACC1E269FBD</keyObject>
+<referredKeyID>FF88E36B-8844-CA43-7DB4-5ACC1E269FBD</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>BID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
