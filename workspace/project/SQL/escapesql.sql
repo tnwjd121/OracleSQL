@@ -11,21 +11,21 @@ where e.bid = t.bid
 group by e.bname;
 
 -- 2. 지점별 장르수
-select e.bname 지점명, t.tgenre 장르, count(*) 장르수
+select e.bname 지점명, t.tgenre 장르명, count(*) 장르수
 from escape_branch e, thema t
 where e.bid = t.bid
 group by e.bname, t.tgenre
 order by e.bname;
 
 -- 3. 지점별 직원수
-select e.bname 지점명, count(*) 인원수
+select e.bname 지점명, count(*) 직원수
 from escape_branch e, emp em
 where e.bid = em.bid
 group by e.bname
 order by e.bname;
 
 -- 4. 지점별 직원수(성별 분류)
-select e.bname 지점명, em.esex 성별, count(em.esex) 인원수
+select e.bname 지점명, em.esex 성별, count(em.esex) 직원수
 from escape_branch e, emp em
 where e.bid = em.bid
 group by e.bname, em.esex
@@ -58,7 +58,7 @@ from (select count(*) as workcount from visit group by visit.eid));
 
 -- 9. 방탈출 방문 리스트에 결제금액 표기(price는 인당 요금)
 select e.bname 지점명, t.tname 테마명, c.cname 고객명, v.visitnum 플레이인원,v.visitnum*t.price 결제금액
-,v.vdate 방문일, em.ename
+,v.vdate 방문일, em.ename 직원명
 from visit v
 left outer join thema t on v.tid =t.tid
 left outer join customer c on c.cid = v.cid
@@ -106,7 +106,7 @@ from thema t, visit v
 where t.tid=v.tid
 group by t.tgenre;
 
---16. 평균보다 높은 나이인 고객들이 선택한 테마
+--16. 평균 초과 나이인 고객들이 선택한 테마
 select t.tname 테마명, round(avg(c.cage)) 평균나이
 from visit v, customer c, thema t
 where c.cid = v.cid and t.tid=v.tid
@@ -114,16 +114,47 @@ group by t.tname
 having avg(c.cage) > (select avg(cage) from customer)
 order by round(avg(c.cage));
 
---17. 평균보다 낮은 나이인 직원들이 근무하는 지점
-select e.bname, round(avg(em.eage))
+--17. 평균 미만 나이인 직원들이 근무하는 지점
+select e.bname 지점명, round(avg(em.eage)) 평균나이
 from emp em, escape_branch e
 where em.bid = e.bid
 group by e.bname
 having avg(em.eage) < (select avg(eage) from emp);
---18. 여성과 남성중 방탈출 플레이 횟수가 많은 성별의 장르 랭킹
-select c.csex, count(*) from customer c, visit v where c.cid =v.cid group by c.csex;
 
---19. 이지아가 안내한 테마와 테마비용
+--18. 성별이 남성인 고객의 선호하는 장르
+select t.tgenre 장르명, count(*) 방문횟수
+from customer c, visit v, thema t 
+where c.cid = v.cid and t.tid = v.tid and c.csex = '남'
+group by t.tgenre
+order by count(*) desc;
+
+--19. 이지아가 안내한 테마와 결제금액
+select t.tname 테마명, t.price*v.visitnum 결제금액
+from thema t, emp em, visit v
+where t.tid=v.vid and em.eid=v.eid and em.ename = '이지아';
 
 --20. 뷰를 생성하여 경성대점 방문 리스트 보여주기
+create view vw_kescape
+as select c.cname 고객명, t.tname 테마명, t.tgenre 장르명, v.visitnum 플레이인원, t.price*v.visitnum 결제금액, v.vdate 방문일, em.ename 직원명
+from visit v, thema t, emp em, escape_branch e, customer c
+where v.tid=t.tid and c.cid=v.cid and em.eid=v.eid and e.bid=t.bid and e.bname = '경성대점';
+select * from vw_kescape;
+
+-- 21. 장르의 난이도 평균
+select tgenre 장르명, round(avg(tlevel)) "평균 난이도"
+from thema
+group by tgenre;
+
+-- 22.난이도 4,5를 플레이한 고객의 이름과 나이
+select t.tname 테마명, t.tgenre 장르명, t.tlevel 난이도, c.cname 고객명, c.cage 나이
+from thema t, visit v, customer c
+where t.tid=v.tid and c.cid=v.vid and t.tlevel in (4,5)
+order by t.tlevel desc;
+
+
+
+
+
+
+
 
